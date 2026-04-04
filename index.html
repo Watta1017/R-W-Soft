@@ -81,19 +81,217 @@
     /* Page 1 - Home */
     #page-home .page-content { font-size: 2.2rem; }
 
-    /* Page 4 - Privacy Policy */
-    #page-privacy .policy-text {
-        font-family: Georgia, serif;
-        font-size: 1rem;
-        max-width: 700px;
-        text-align: left;
-        line-height: 1.8;
-        opacity: 0.85;
+    .motto {
+        font-size: 1.8rem;
+        letter-spacing: 0.1em;
+        opacity: 0.9;
     }
 
-    #page-privacy h2 {
-        font-size: 2rem;
-        margin-bottom: 24px;
+    .motto-sub {
+        margin-top: 20px;
+        font-size: 0.85rem;
+        max-width: 480px;
+        text-align: center;
+        line-height: 1.7;
+    }
+
+    /* Page 4 - Privacy Policy */
+    .policy-wrap {
+        max-width: 760px;
+        width: 100%;
+        text-align: left;
+        padding: 20px 0 80px;
+    }
+
+    .lang-toggle {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .lang-toggle button {
+        background: none;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 6px 20px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 0.9rem;
+        cursor: pointer;
+        opacity: 0.5;
+        transition: opacity 0.2s;
+    }
+
+    .lang-toggle button.active {
+        opacity: 1;
+        background: #fff;
+        color: #000;
+    }
+
+    .policy-body h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .policy-body .updated {
+        font-size: 0.85rem;
+        opacity: 0.5;
+        margin-bottom: 32px;
+    }
+
+    .policy-body h2 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 28px 0 8px;
+        opacity: 0.9;
+    }
+
+    .policy-body p, .policy-body li {
+        font-size: 0.92rem;
+        line-height: 1.8;
+        opacity: 0.75;
+    }
+
+    .policy-body ul {
+        padding-left: 20px;
+        margin-top: 6px;
+    }
+
+    .contact-wrap {
+        max-width: 600px;
+        width: 100%;
+        text-align: left;
+        padding: 20px 0 80px;
+    }
+
+    .contact-wrap h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .contact-sub {
+        font-size: 0.9rem;
+        opacity: 0.5;
+        margin-bottom: 36px;
+    }
+
+    .form-group {
+        margin-bottom: 28px;
+    }
+
+    .form-group > label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.85rem;
+        opacity: 0.6;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .char-count {
+        font-size: 0.8rem;
+        opacity: 0.5;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 16px;
+    }
+
+    .radio-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-size: 0.95rem;
+        padding: 10px 20px;
+        border: 1px solid rgba(255,255,255,0.25);
+        transition: border-color 0.2s;
+    }
+
+    .radio-label:hover { border-color: rgba(255,255,255,0.6); }
+
+    .radio-label input[type="radio"] {
+        accent-color: #fff;
+        width: 15px;
+        height: 15px;
+    }
+
+    textarea#contact-message {
+        width: 100%;
+        height: 200px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.25);
+        color: #fff;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 0.95rem;
+        padding: 14px;
+        resize: vertical;
+        outline: none;
+        transition: border-color 0.2s;
+        line-height: 1.6;
+    }
+
+    textarea#contact-message:focus { border-color: rgba(255,255,255,0.7); }
+    textarea#contact-message::placeholder { opacity: 0.3; }
+
+    .submit-btn {
+        background: #fff;
+        color: #000;
+        border: none;
+        padding: 12px 40px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .submit-btn:hover { opacity: 0.8; }
+
+    #submitted-list {
+        margin-top: 48px;
+    }
+
+    .submitted-header {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.4;
+        margin-bottom: 16px;
+        font-weight: 400;
+    }
+
+    .submitted-item {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding: 16px 0;
+    }
+
+    .submitted-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+    }
+
+    .submitted-topic {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        opacity: 0.5;
+    }
+
+    .submitted-time {
+        font-size: 0.8rem;
+        opacity: 0.3;
+    }
+
+    .submitted-msg {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        opacity: 0.75;
     }
 </style>
 </head>
@@ -105,16 +303,14 @@
         <li><a onclick="showPage('game')">Game</a></li>
         <li><a onclick="showPage('news')">News</a></li>
         <li><a onclick="showPage('privacy')">PrivacyPolicy</a></li>
-        <li><a onclick="showPage('overview')">Overview</a></li>
+        <li><a onclick="showPage('overview')">Contact</a></li>
     </ul>
 </nav>
 
 <!-- Page 1: Home -->
 <div id="page-home" class="page active">
-    <div class="page-content">
-        It's still unfinished<br>
-        Please wait for a while
-    </div>
+    <div class="motto">Nailing every single one</div>
+    <div class="motto-sub">With this unwavering dedication, I look forward to building something great together with all of you</div>
     <footer>© 2026, R W Soft</footer>
 </div>
 
@@ -134,19 +330,117 @@
 
 <!-- Page 4: Privacy Policy -->
 <div id="page-privacy" class="page">
-    <div class="page-content">
-        Under construction
+    <div class="policy-wrap">
+        <div class="policy-body">
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last updated: April 4, 2026</p>
+
+            <h2>1. Introduction</h2>
+            <p>R W Soft ("we" or "us") develops and operates mobile and PC games ("the Apps"). This Privacy Policy explains how we collect, use, and protect information when you use our Apps.</p>
+
+            <h2>2. Information We Collect</h2>
+            <p>We may collect the following information:</p>
+            <ul>
+                <li><strong>Advertising Identifier (Advertising ID)</strong>: Used through Google AdMob for personalized advertising and ad performance measurement.</li>
+            </ul>
+
+            <h2>3. How We Use Information</h2>
+            <p>We use the collected information to:</p>
+            <ul>
+                <li>Provide, operate, and improve the Apps</li>
+                <li>Deliver and optimize advertisements</li>
+                <li>Analyze usage patterns</li>
+            </ul>
+
+            <h2>4. Third-Party Services</h2>
+            <p>We may share information with the following service provider, which operates under its own privacy policy:</p>
+            <ul>
+                <li>Google AdMob (advertising) — <a href="https://policies.google.com/privacy" target="_blank" style="color:#aaa;">Google Privacy Policy</a></li>
+            </ul>
+
+            <h2>5. Opt-Out of Personalized Ads</h2>
+            <p>You may limit the use of your Advertising ID by enabling "Opt out of Ads Personalization" or "Limit Ad Tracking" in your device settings.</p>
+
+            <h2>6. Children's Privacy</h2>
+            <p>Our Apps are not directed at children under the age of 13. If we become aware that we have inadvertently collected personal information from a child under 13, we will delete it promptly.</p>
+
+            <h2>7. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Changes take effect when posted on this page.</p>
+
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us through the contact page on this website.</p>
+        </div>
     </div>
 </div>
 
-<!-- Page 5: Overview -->
+<!-- Page 5: Contact -->
 <div id="page-overview" class="page">
-    <div class="page-content">
-        Under construction
+    <div class="contact-wrap">
+        <h1>Contact</h1>
+        <p class="contact-sub">Please fill out the form below and we'll get back to you.</p>
+
+        <div class="form-group">
+            <label>Topic</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="topic" value="game" checked>
+                    <span>About the Game</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="topic" value="policy">
+                    <span>About the Privacy Policy</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="contact-message">Message <span class="char-count" id="char-count">0 / 1000</span></label>
+            <textarea id="contact-message" placeholder="Write your message here..." maxlength="1000" oninput="updateCount()"></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="submitForm()">Send</button>
+        <p id="contact-thanks" style="display:none; margin-top:20px; opacity:0.7;">Thank you! We'll get back to you soon.</p>
+
+        <div id="submitted-list"></div>
     </div>
 </div>
 
 <script>
+    function updateCount() {
+        const len = document.getElementById('contact-message').value.length;
+        document.getElementById('char-count').textContent = len + ' / 1000';
+    }
+
+    function submitForm() {
+        const msg = document.getElementById('contact-message').value.trim();
+        if (!msg) return;
+        const topic = document.querySelector('input[name="topic"]:checked').value;
+        const topicLabel = topic === 'game' ? 'About the Game' : 'About the Privacy Policy';
+        const now = new Date();
+        const timeStr = now.toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' })
+                                    + ' ' + now.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+
+        const list = document.getElementById('submitted-list');
+        if (list.children.length === 0) {
+            const header = document.createElement('h2');
+            header.className = 'submitted-header';
+            header.textContent = 'Submitted Messages';
+            list.appendChild(header);
+        }
+
+        const item = document.createElement('div');
+        item.className = 'submitted-item';
+        item.innerHTML = `
+            <div class="submitted-meta"><span class="submitted-topic">${topicLabel}</span><span class="submitted-time">${timeStr}</span></div>
+            <p class="submitted-msg">${msg.replace(/\n/g, '<br>')}</p>
+        `;
+        list.appendChild(item);
+
+        document.getElementById('contact-thanks').style.display = 'block';
+        document.getElementById('contact-message').value = '';
+        updateCount();
+    }
+
     const pageMap = {
         '':         'home',
         'home':     'home',
