@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R W Soft</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        background: #000;
+        color: #fff;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 28px 48px;
+        gap: 60px;
+    }
+
+    .brand {
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: nowrap;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .brand:hover { opacity: 0.8; }
+
+    .nav-links {
+        display: flex;
+        gap: 60px;
+        list-style: none;
+        margin-left: 80px;
+    }
+
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 0.7; }
+
+    .page {
+        display: none;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .page.active {
+        display: flex;
+    }
+
+    .page-content {
+        font-size: 2.5rem;
+        line-height: 1.5;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 24px;
+        left: 48px;
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+
+    /* Page 1 - Home */
+    #page-home .page-content { font-size: 2.2rem; }
+
+    /* Page 4 - Privacy Policy */
+    #page-privacy .policy-text {
+        font-family: Georgia, serif;
+        font-size: 1rem;
+        max-width: 700px;
+        text-align: left;
+        line-height: 1.8;
+        opacity: 0.85;
+    }
+
+    #page-privacy h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <a class="brand" onclick="showPage('home')">R W Soft</a>
+    <ul class="nav-links">
+        <li><a onclick="showPage('game')">Game</a></li>
+        <li><a onclick="showPage('news')">News</a></li>
+        <li><a onclick="showPage('privacy')">PrivacyPolicy</a></li>
+        <li><a onclick="showPage('overview')">Overview</a></li>
+    </ul>
+</nav>
+
+<!-- Page 1: Home -->
+<div id="page-home" class="page active">
+    <div class="page-content">
+        It's still unfinished<br>
+        Please wait for a while
+    </div>
+    <footer>© 2026, R W Soft</footer>
+</div>
+
+<!-- Page 2: Game -->
+<div id="page-game" class="page">
+    <div class="page-content">
+        Coming soon ...
+    </div>
+</div>
+
+<!-- Page 3: News -->
+<div id="page-news" class="page">
+    <div class="page-content">
+        No news yet
+    </div>
+</div>
+
+<!-- Page 4: Privacy Policy -->
+<div id="page-privacy" class="page">
+    <div class="page-content">
+        Under construction
+    </div>
+</div>
+
+<!-- Page 5: Overview -->
+<div id="page-overview" class="page">
+    <div class="page-content">
+        Under construction
+    </div>
+</div>
+
+<script>
+    const pageMap = {
+        '':         'home',
+        'home':     'home',
+        'game':     'game',
+        'news':     'news',
+        'privacy':  'privacy',
+        'overview': 'overview'
+    };
+
+    function showPage(id, updateHash = true) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        const el = document.getElementById('page-' + id);
+        if (el) el.classList.add('active');
+        if (updateHash) {
+            try {
+                location.hash = id === 'home' ? '' : id;
+            } catch(e) {}
+        }
+        document.title = id === 'home' ? 'R W Soft' : 'R W Soft — ' + id.charAt(0).toUpperCase() + id.slice(1);
+    }
+
+    function loadFromHash() {
+        const hash = location.hash.replace('#', '').toLowerCase();
+        const id = pageMap[hash] || 'home';
+        showPage(id, false);
+    }
+
+    window.addEventListener('hashchange', loadFromHash);
+    loadFromHash();
+</script>
+
+</body>
+</html>
